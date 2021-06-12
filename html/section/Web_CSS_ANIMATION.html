@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>201663025 이진성</title>
+        <link href="../../css/Web_SECTION.css" type="text/css" rel="stylesheet">
+        <script src='../../js/edit_n_view.js'></script>
+    </head>
+    <body>
+        <h3>CSS Animation</h3>
+        <h5>Web_CSS_ANIMATION.html</h5>
+        <hr>
+        <h4>배경 스타일 실습하기</h4>
+        <div id='ex-container'>
+            <textarea id='editor'>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;this is title&lt;/title&gt;
+        &lt;style&gt;
+            @keyframes anim {
+                0%   {background-color:red; left:0px; top:0px;}
+                25%  {background-color:yellow; left:250px; top:0px;}
+                50%  {background-color:blue; left:250px; top:250px;}
+                75%  {background-color:green; left:0px; top:250px;}
+                100% {background-color:red; left:0px; top:0px;}
+            }
+            #test1 {
+                width: 50px;
+                height: 50px;
+                background-color: red;
+                position: relative;
+                animation-name: anim;
+                animation-duration: 3s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate; 
+             }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id='test1'&gt;&lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</textarea><br>
+            <button onclick="openTest('editor')">테스트 코드 실행</button>
+        </div>
+    </body>
+</html>

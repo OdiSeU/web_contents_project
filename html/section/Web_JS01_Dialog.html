@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>201663025 이진성</title>
+        <link href="../../css/Web_SECTION.css" type="text/css" rel="stylesheet">
+        <style>
+            button {
+                height: 40px;
+                margin: 10px;
+            }
+        </style>
+        <script>
+            window.onload = () => {
+                document.getElementById('alert').onclick = function() {
+                    this.innerText = `alert result : ${alert('this is alert')}`;
+                }
+                document.getElementById('prompt').onclick = function() {
+                    this.innerText = `prompt result : ${prompt('this is prompt')}`;
+                }
+                document.getElementById('confirm').onclick = function() {
+                    this.innerText = `confirm result : ${confirm('this is confirm')}`;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h3>Javascript Dialog</h3>
+        <h5>Web_JS01_Dialog.html</h5>
+        <hr>
+        <h4>Dialog 3가지 실습</h4>
+        <dd>
+            <button id='alert'>alert</button><br>
+            <button id='prompt'>prompt</button><br>
+            <button id='confirm'>confirm</button>
+        </dd>
+    </body>
+</html>

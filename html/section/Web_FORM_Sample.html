@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>회원 등록 페이지</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 0px;
+        }
+        #container {
+            padding: 20px 0px;
+            width: 650px;
+            border: 1px solid red;
+            border-radius: 20px;
+            box-shadow: 3px 5px 10px 0px rgba(200, 202, 206);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #field {
+            margin: 0px 20px;
+        }
+        #field ul {
+            margin: 0px;
+            text-align: left;
+        }
+        #field li {
+            margin: 10px;
+        }
+        img {
+            transition: 0.4s;
+            transform: scale(1, 1);
+        }
+        img:hover {
+            transition: 0.4s;
+            transform: scale(1.2, 1.2);
+        }
+    </style>
+</head>
+<body>
+    <form id='container'>
+        <h2>201663025 이진성 회원 등록</h2>
+        <hr>
+        <fieldset id='field'>
+            <legend>신입 회원 정보</legend>
+            <table>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>이름 : <input type='text' size=25 placeholder="이진성(李珍成)"></li>
+                            <li>전공 : <input type='text' size=25 placeholder="융합소프트웨어"></li>
+                            <li>혈액형 : 
+                                <select>
+                                    <option value='1'>A</option>
+                                    <option value='2'>B</option>
+                                    <option value='3'>O</option>
+                                    <option value='4'>AB</option>
+                                </select>
+                            </li>
+                            <li>이메일 : <input type='email' size=25 placeholder="honggildong@gmail.com"></li>
+                            <li>블로그 : <input type='url' size=25 placeholder="http://"></li>
+                            <li>전화번호 : <input type='tel' size=25 placeholder="010-1234-5678"></li>
+                        </ul>
+                    </td>
+                    <td>
+                        <img src="../../src/face.png" alt="Can't load image">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <ul>
+                            <li>좋아하는 계절 : 
+                                <fieldset>
+                                    <input type='radio' name='season' value='1'> 봄 (Spring)
+                                    <input type='radio' name='season' value='2'> 여름 (Summer)
+                                    <input type='radio' name='season' value='3' checked> 가을 (Fall)
+                                    <input type='radio' name='season' value='4'> 겨울 (Winter)
+                                </fieldset>
+                            </li>
+                            <li>등록일자 : <input type='date' value='2021-04-15'></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <small>작성자 : 이진성(odiseu365@gmail.com)</small>
+    </form>
+</body>
+</html>

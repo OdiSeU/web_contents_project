@@ -1,0 +1,52 @@
+body {
+    margin: 0px;
+    text-align: center;
+    color: white;
+}
+h3 {
+    margin: auto;
+    padding-top: 10px;
+}
+
+h5 {
+    text-align: right;
+    margin: auto;
+    padding-top: 10px;
+}
+
+#nav-bar {
+    position: fixed;
+    bottom: 0px;
+}
+
+.nav-button {
+    display: inline-block;
+    position: relative;
+    top: 10px;
+    height: 40px;
+    width: 100px;
+    padding-top: 5px;
+    background: #0079FF;
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: 2px 2px 2px black;
+    transition: 0.4s;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-button:hover {
+    transition: 0.3s;
+    top: 1px;
+}
+
+
+#fixed {
+    position: fixed;
+    top: 0px;
+    right: 10px;
+    width: 200px;
+    padding: 5px;
+    border-radius: 0px 0px 10px 10px;
+    background: #B3BAC5;
+    color: white;
+}
