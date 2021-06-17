@@ -14,7 +14,7 @@
                     let script = document.createElement('script');
                     script.text = 'window.onblur = function(){window.close()};'
                     script.text += editor.parentElement.firstElementChild.value;
-                    testWindow = window.open('','result',"width=270, height=650, toolbar=no, menubar=no, scrollbars=no, resizable=yes");
+                    testWindow = window.open('','result',"width=300, height=650, toolbar=no, menubar=no, scrollbars=no, resizable=yes");
                     testWindow.document.head.append(script);
                 }
                 catch {
