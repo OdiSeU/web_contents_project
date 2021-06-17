@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>201663025 이진성</title>
+        <link href="../../css/Web_SECTION.css" type="text/css" rel="stylesheet">
+        <style>
+            #editor { height: 200px; }
+        </style>
+        <script>
+            const log = console.log;
+            function exeJS(editor) {
+                try{
+                    let script = document.createElement('script');
+                    script.text = 'window.onblur = function(){window.close()};'
+                    script.text += editor.parentElement.firstElementChild.value;
+                    testWindow = window.open('','result',"width=270, height=650, toolbar=no, menubar=no, scrollbars=no, resizable=yes");
+                    testWindow.document.head.append(script);
+                }
+                catch {
+                    alert('다른 페이지에서 자식창을 열어 놓았을 경우 오류가 발생합니다.\n자식창을 닫고 다시 시도해주세요.');
+                }
+            }
+            function clearOutput() {
+                document.getElementById('output').innerText = "";
+            }
+            console.log = function() {
+                let args = [];
+                for(let i = 0; i < arguments.length; i++) {
+                    args.push(arguments[i]);
+                }
+                log(args);
+                document.getElementById('output').innerText += args.join(' ') + '\n';
+            }
+        </script>
+    </head>
+    <body>
+        <h3>Javascript 실습 5</h3>
+        <h5>JS_EX_TimesTable.html</h5>
+        <hr>
+        <h4>e.1 - 3행 3열로 표시되는 구구단을 출력하시오.</h4>
+        <dd>
+            <img src="../../src/JS_EX_TimesTable1.png">
+        </dd>
+        <div class='ex-container'>
+            <textarea id='editor'>let gugudan = Array.from(Array(9),()=>[]);;
+for(let i = 1; i <= 9; i++) {
+    for(let j = 1; j <= 9; j++) gugudan[i-1].push(`${i} * ${j} = ${i*j}`);
+}
+let table = document.createElement('table');
+document.body.append(table);
+for(let i = 0; i < 3; i++) {
+    let tr = document.createElement('tr');
+    table.append(tr);
+    for(let j = 0; j < 3; j++) {
+        let td = document.createElement('td');
+        td.style.border = '1px solid black';
+        td.innerText = gugudan[i*3+j].join('\n');
+        tr.append(td);
+    }
+}
+            </textarea><br>
+            <button onclick="exeJS(this)">테스트 코드 실행</button>
+        </div>
+        <h4>e.2 - 3행 3열로 표시되는 구구단을 출력하시오.</h4>
+        <dd>
+            <img src="../../src/JS_EX_TimesTable2.png">
+        </dd>
+        <div class='ex-container'>
+            <textarea id='editor'>let gugudan = Array.from(Array(9),()=>[]);;
+for(let i = 0; i < 9; i++) {
+    for(let j = 1; j <= 9; j++) {
+        let dan = 9-((i%3)*3+(Math.floor(i/3)));
+        gugudan[i].push(`${dan} * ${j} = ${dan*j}`);
+    }
+}
+let table = document.createElement('table');
+document.body.append(table);
+for(let i = 0; i < 3; i++) {
+    let tr = document.createElement('tr');
+    table.append(tr);
+    for(let j = 0; j < 3; j++) {
+        let td = document.createElement('td');
+        td.style.border = '1px solid black';
+        td.innerText = gugudan[i*3+j].join('\n');
+        tr.append(td);
+    }
+}
+            </textarea><br>
+            <button onclick="exeJS(this)">테스트 코드 실행</button>
+        </div>
+    </body>
+</html>

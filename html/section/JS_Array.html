@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>201663025 이진성</title>
+        <link href="../../css/Web_SECTION.css" type="text/css" rel="stylesheet">
+        <script>
+            const log = console.log;
+            function exeJS(editor) {
+                let code = editor.parentElement.firstElementChild.value;
+                eval(`(function(){${code}})`)();
+            }
+            function clearOutput() {
+                document.getElementById('output').innerText = "";
+            }
+            console.log = function() {
+                let args = [];
+                for(let i = 0; i < arguments.length; i++) {
+                    args.push(arguments[i]);
+                }
+                log(args);
+                document.getElementById('output').innerText += args.join(' ') + '\n';
+            }
+        </script>
+    </head>
+    <body>
+        <h3>Array</h3>
+        <h5>JS_Array.html</h5>
+        <hr>
+        <h4>배열</h4>
+        <dd>
+            배열은 변수들을 하나의 변수명으로 묶어 사용하는 것이다.
+        </dd>
+        <h4>Array 객체 실습하기</h4>
+        <div class='ex-container'>
+            <textarea id='editor'>// 배열의 선언
+let a = [1,2,3,4]; // 배열 리터럴로 생성
+let b = new Array(5,6,7,8); // Array 생성자로 생성
+console.log('a : ', a);
+console.log('b : ', b);
+// 배열 뒤에 원소 추가
+a.push(5);
+console.log('a : ', a);
+// 배열 마지막 원소 삭제
+a.pop();
+console.log('a : ', a);
+// 배열 첫 원소 삭제
+a.shift();
+console.log('a : ', a);
+// 배열 앞에 원소 추가
+a.unshift(1);
+console.log('a : ', a);
+// 배열 합치기
+console.log('a concat b : ', a.concat(b));
+// 배열 자르기
+console.log('a slice 1 to 3 : ', a.slice(1,3));
+</textarea><br>
+            <button onclick="exeJS(this)">테스트 코드 실행</button>
+        </div>
+        <h4>출력창</h4>
+        <div id='output'></div>
+        <button id='clearBtn' onclick="clearOutput()">출력창 초기화</button>
+    </body>
+</html>

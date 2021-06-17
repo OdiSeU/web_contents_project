@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>201663025 이진성</title>
+        <link href="../../css/Web_SECTION.css" type="text/css" rel="stylesheet">
+        <script>
+            window.onload = function() {
+                let canvas = document.getElementById("myCanvas");
+                let context = canvas.getContext("2d");
+            
+                context.beginPath();
+                context.lineWidth = 5;
+                context.arc(30, 80, 20, 0, Math.PI * 2);
+                context.stroke(); 
+            
+            
+                context.beginPath();
+                context.moveTo(70, 60);
+                context.lineTo(60, 120);
+                context.stroke();
+            
+                context.beginPath();
+                context.moveTo(80, 60);
+                context.lineTo(110, 70);
+                context.lineTo(80, 100);
+                context.moveTo(95, 85);
+                context.lineTo(110, 95);
+                context.stroke();
+            
+                context.beginPath();
+                context.moveTo(130, 60);
+                context.lineTo(120, 120);
+                context.lineTo(150, 125);
+                context.stroke();
+            
+                context.beginPath();
+                context.moveTo(170, 60);
+                context.lineTo(150, 100);
+                context.moveTo(160, 80);
+                context.lineTo(170, 100);
+                
+                context.moveTo(170, 80);
+                context.lineTo(190, 85);
+                context.moveTo(200, 60);
+                context.lineTo(190, 100);
+                context.stroke();
+                
+                context.save();
+                context.beginPath();
+                context.translate(180, 130);
+                context.rotate(Math.PI/4);
+                context.rect(-15, -15, 30, 30);
+                context.stroke(); 
+                context.restore();
+            
+                context.font = "20px Gothic";
+                context.fillStyle = "green"; 
+                context.fillText("201663025", 70, 40);
+            }
+        </script>
+    </head>
+    <body>
+        <h3>Javascript 실습 6</h3>
+        <h5>JS_Canvas.html</h5>
+        <hr>
+        <h4>Canvas 기능을 이용하여 본인 이름을 표시하시오.<br>
+            선, 직사각형, 호를 이용하여 본인 이름을 표시하시오.</h4>
+        <dd>
+            <canvas id="myCanvas" style="background-color:aliceblue"
+	    width="250" height="200"></canvas>
+        </dd>
+    </body>
+</html>

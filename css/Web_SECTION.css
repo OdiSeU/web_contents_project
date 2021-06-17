@@ -4,15 +4,31 @@ h3, h5 {
     text-align: center;
 }
 body {
-    margin: 0px;
+    margin: 0px 10px;
 }
 
-#ex-container {
+.ex-container {
     text-align: center;
 }
 
 #editor {
-    width: 99%;
-    height: 300px;
+    width: 90%;
+    height: 320px;
+    padding: 15px;
     text-align: left;
+}
+
+#output {
+    width: 90%;
+    padding: 15px;
+    background-color: #0f0f0f;
+    color: white;
+    text-align: left;
+    margin: auto;
+}
+
+#clearBtn {
+    display: block;
+    margin: auto;
+    text-align: center;
 }

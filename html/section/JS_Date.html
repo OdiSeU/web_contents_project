@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>201663025 이진성</title>
+        <link href="../../css/Web_SECTION.css" type="text/css" rel="stylesheet">
+        <script>
+            const log = console.log;
+            function exeJS(editor) {
+                let code = editor.parentElement.firstElementChild.value;
+                eval(`(function(){${code}})`)();
+            }
+            function clearOutput() {
+                document.getElementById('output').innerText = "";
+            }
+            console.log = function() {
+                let args = [];
+                for(let i = 0; i < arguments.length; i++) {
+                    args.push(arguments[i]);
+                }
+                log(args);
+                document.getElementById('output').innerText += args.join(' ') + '\n';
+            }
+        </script>
+    </head>
+    <body>
+        <h3>Date</h3>
+        <h5>JS_Date.html</h5>
+        <hr>
+        <h4>날짜 객체</h4>
+        <dd>
+            javascript는 날짜에 대한 객체인 Date객체를 기본 제공한다.
+        </dd>
+        <h4>Date 객체 실습하기</h4>
+        <div class='ex-container'>
+            <textarea id='editor'>
+let now = new Date(); // Date 객체 생성
+console.log(now); // 실행 시점의 시각을 담은 객체가 생성된다.
+let date = new Date(2021, 5, 15); // 특정 날짜의 객체 생성
+
+console.log('now.getFullYear() : ', now.getFullYear()); // 연도
+console.log('now.getYear() : ', now.getYear()); // 연도 - 1900
+console.log('now.getMonth() : ', now.getMonth()); // 월(0부터 시작)
+console.log('now.getDate() : ', now.getDate()); // 일
+console.log('now.getDay() : ', now.getDay()); // 요일 (일요일=0, ... 토요일=7)
+console.log('now.getHours() : ', now.getHours()); // 시간
+console.log('now.getMinutes() : ', now.getMinutes()); // 분
+console.log('now.getSeconds() : ', now.getSeconds()); // 초
+console.log('now.getMilliseconds() : ', now.getMilliseconds()); // 밀리초
+</textarea><br>
+            <button onclick="exeJS(this)">테스트 코드 실행</button>
+        </div>
+        <h4>출력창</h4>
+        <div id='output'></div>
+        <button id='clearBtn' onclick="clearOutput()">출력창 초기화</button>
+    </body>
+</html>

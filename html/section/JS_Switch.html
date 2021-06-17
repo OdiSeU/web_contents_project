@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>201663025 이진성</title>
+        <link href="../../css/Web_SECTION.css" type="text/css" rel="stylesheet">
+        <script>
+            function exeJS(editor) {
+                let code = editor.parentElement.firstElementChild.value;
+                eval(`(function(){${code}})`)();
+            }
+        </script>
+    </head>
+    <body>
+        <h3>Switch</h3>
+        <h5>JS_Switch.html</h5>
+        <hr>
+        <h4>조건문4</h4>
+        <dd>
+             조건문인 switch(){ case : ... } 문은 if{...}else if{...}else{...}문과 비슷하게 쓰일 수 있다.
+        </dd>
+        <h4>switch문 실습하기</h4>
+        <div class='ex-container'>
+            <textarea id='editor'>// rank 값에 따라 다른 결과가 나온다.
+let rank = 'A';
+switch(rank) {
+    case 'A' : alert("Your score is 4.0"); break;
+    case 'B' : alert("Your score is 3.0"); break;
+    case 'C' : alert("Your score is 2.0"); break;
+    case 'D' : alert("Your score is 1.0"); break;
+    case 'F' : alert("Your score is 0"); break;
+    default : alert("????");
+}
+            </textarea><br>
+            <button onclick="exeJS(this)">테스트 코드 실행</button>
+        </div>
+    </body>
+</html>

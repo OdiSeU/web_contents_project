@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>201663025 이진성</title>
+        <link href="../../css/Web_SECTION.css" type="text/css" rel="stylesheet">
+        <script>
+            function exeJS(editor) {
+                let code = editor.parentElement.firstElementChild.value;
+                eval(`(function(){${code}})`)();
+            }
+        </script>
+    </head>
+    <body>
+        <h3>Break</h3>
+        <h5>JS_Break.html</h5>
+        <hr>
+        <h4>반복문4</h4>
+        <dd>
+             break문은 현재 반복문을 종료시킨다.
+        </dd>
+        <h4>break문 실습하기</h4>
+        <div class='ex-container'>
+            <textarea id='editor'>// 아무리 많이 맞는다고 입력해도 10대를 넘기지 못한다.
+let num = parseInt(prompt('몇 대 맞을거야?!!'));
+if(isNaN(num)) alert('장난치는 거야?!');
+else {
+    let i = 0, str = '';
+    do {
+        str += '때찌';
+        if(i >= 9) break;
+    } while(++i < num);
+    alert(str + '\n아이고 힘들어');
+}
+            </textarea><br>
+            <button onclick="exeJS(this)">테스트 코드 실행</button>
+        </div>
+    </body>
+</html>

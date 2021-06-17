@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>201663025 이진성</title>
+        <link href="../../css/Web_SECTION.css" type="text/css" rel="stylesheet">
+        <style>
+            #editor { height: 200px; }
+        </style>
+        <script>
+            const log = console.log;
+            function exeJS(editor) {
+                let code = editor.parentElement.firstElementChild.value;
+                eval(`(function(){${code}})`)();
+            }
+            function clearOutput() {
+                document.getElementById('output').innerText = "";
+            }
+            console.log = function() {
+                let args = [];
+                for(let i = 0; i < arguments.length; i++) {
+                    args.push(arguments[i]);
+                }
+                log(args);
+                document.getElementById('output').innerText += args.join(' ') + '\n';
+            }
+        </script>
+    </head>
+    <body>
+        <h3>Javascript 실습 2</h3>
+        <h5>JS_EX_Factorial.html</h5>
+        <hr>
+        <h4>b. Factorial(10) - 10! (Factorial) 을 구하시오.</h4>
+        <div class='ex-container'>
+            <textarea id='editor'>let fact = 1;
+for(let i = 2; i <= 10; i++) fact *= i;
+alert(fact);
+            </textarea><br>
+            <button onclick="exeJS(this)">테스트 코드 실행</button>
+        </div>
+    </body>
+</html>

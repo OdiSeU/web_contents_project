@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>201663025 이진성</title>
+        <link href="../../css/Web_SECTION.css" type="text/css" rel="stylesheet">
+        <script>
+            function exeJS(editor) {
+                let code = editor.parentElement.firstElementChild.value;
+                eval(`(function(){${code}})`)();
+            }
+        </script>
+    </head>
+    <body>
+        <h3>IfElse</h3>
+        <h5>JS_IfElse.html</h5>
+        <hr>
+        <h4>조건문2</h4>
+        <dd>
+             조건문인 if{...}else{...}문은 if문의 조건에 맞지 않는 경우 else{...}의 구문을 실행시킨다.
+        </dd>
+        <h4>if else문 실습하기</h4>
+        <div class='ex-container'>
+            <textarea id='editor'>let check = confirm('Would you buy this apple?');
+// confirm창에서 확인을 누를경우 if문, 취소를 누를경우 else문 실행.
+if(check === true) alert("It's 5,000 dollars.");
+else alert("Good bye.");
+            </textarea><br>
+            <button onclick="exeJS(this)">테스트 코드 실행</button>
+        </div>
+    </body>
+</html>

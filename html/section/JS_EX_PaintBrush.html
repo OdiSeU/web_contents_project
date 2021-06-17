@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>201663025 이진성</title>
+        <link href="../../css/Web_SECTION.css" type="text/css" rel="stylesheet">
+        
+        <script>
+            var canvas, context;
+            window.onload = function() {
+                canvas = document.getElementById("myCanvas");
+                context = canvas.getContext("2d");
+            
+                context.lineWidth = 3;
+            
+                canvas.addEventListener("mousemove", function (e) { move(e) }, false);
+                canvas.addEventListener("mousedown", function (e) { down(e) }, false);
+                canvas.addEventListener("mouseup", function (e) { up(e) }, false);
+                canvas.addEventListener("mouseout", function (e) { out(e) }, false);
+                canvas.addEventListener("contextmenu", function(e) { e.returnValue = false; }, false);
+            }
+            
+            var startX=0, startY=0; // 마우스의 마지막 포인터 좌표
+            var drawing=false;
+            function draw(curX, curY, color) {
+                context.beginPath();
+                context.moveTo(startX, startY);
+                context.lineTo(curX, curY);
+                context.stroke();
+            }
+
+            function down(e) {
+                startX = e.offsetX; startY = e.offsetY;
+                if(e.button == 0) context.strokeStyle = document.getElementById('brush').value;
+                if(e.button == 2) context.strokeStyle = '#ffffff';
+                drawing = true;
+            }
+            function up(e) { drawing = false; }
+            function move(e) {
+                if(!drawing) return; // 마우스가 눌러지지 않았으면 리턴
+                var curX = e.offsetX, curY = e.offsetY;
+                draw(curX, curY);
+                startX = curX; startY = curY;
+            }
+            function out(e) { drawing = false; }
+
+            function erase() {
+                context.fillStyle = '#ffffff';
+                context.fillRect(0,0,canvas.width,canvas.height);
+            }
+            function changeSize() {
+                context.lineWidth = document.getElementById('size').value;
+            }
+        </script>
+    </head>
+    <body>
+        <h3>Javascript 실습 7</h3>
+        <h5>JS_EX_PaintBrush.html</h5>
+        <hr>
+        <h4>그림판 기능을 이용하여 본인 이름을 표시하시오.</h4>
+        <dd>
+            [기능 목록]<br>
+            - 마우스 왼쪽 버튼 : 그리기<br>
+            - 마우스 오른쪽 버튼 : 지우기<br>
+            - 색고르기 버튼 : 그리기 색 변경<br>
+            - 새로 그리기 : 전체 지우기<br>
+            - range 바 : 브러쉬 두께 조절 (1 ~ 10)<br>
+            <div>
+                <input type='color' id='brush' value='#0000ff'>
+                <input type='button' onclick="erase()" value='새로그리기'>
+                <input type='range' id='size' min='1' max='10' value="3" onchange="changeSize()">
+                <br>
+                <canvas id="myCanvas" style="border: 1px solid black;"width="400" height="400"></canvas>
+            </div>
+        </dd>
+    </body>
+</html>
